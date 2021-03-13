@@ -11,9 +11,21 @@ function randomValueFromArray(array) {
 }
 
 let start = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.'
-let insertx = ['Willy the Goblin, Big Daddy, Father Christmas'];
-let inserty = ['the soup kitchen, Disneyland, the White House'];
-let insertZ = ['spontaneously combusted, melted into a puddle on the sidewalk, turned into a slug and crawled away'];
+// let insertx = ['Willy the Goblin, Big Daddy, Father Christmas'];
+// let inserty = ['the soup kitchen, Disneyland, the White House'];
+// let insertZ = ['spontaneously combusted, melted into a puddle on the sidewalk, turned into a slug and crawled away'];
+
+
+// Q1.
+// ↑ 위에 선언된 것을 사용했을때는 이름이 적용되는데 스토리가 랜덤으로 안 바뀌고 
+// ↓ 아래 코드를 입력했을때는 이름값은 적용이 안되는데 스토리는 랜덤으로 돌아가요.
+
+
+
+let insertx = ('Willy the Goblin, Big Daddy, Father Christmas');
+let inserty = ('the soup kitchen, Disneyland, the White House');
+let insertZ = ('spontaneously combusted, melted into a puddle on the sidewalk, turned into a slug and crawled away');
+
 
 randomize.addEventListener('click', result);
 
@@ -34,7 +46,6 @@ function result() {
         let name = customName.value;
 
         newStory = newStory.replace('Bob', name);
-        // "만약 customName 텍스트 입력에 값이 들어가 있다면, 이야기속의 Bob을 사용자가 정의한 이름으로 바꾸세요"
     }
 
     if (document.getElementById("uk").checked) {
@@ -42,6 +53,10 @@ function result() {
         let temperature = Math.round(94) + 'centigrade';
 
         newStory = newStory.replace('94 farenheit', temperature);
+        
+        // Q2. 왜 'centigrade'로 안 바뀌는거일까요?
+        // Q3. 수치값을 다르게 보여주려면 어떻게 해야하나요?
+
         newStory = newStory.replace('300 pounds', weight);
     }
     story.textContent = newStory;
