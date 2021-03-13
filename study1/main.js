@@ -37,3 +37,4 @@ function result() {
     story.textContent = ;
     story.style.visibility = 'visible';
 }
+
