@@ -31,7 +31,7 @@ randomize.addEventListener('click', result);
 
 function result() {
 
-    let newStory = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
+    let newStory = storyText;
     let xItem = randomValueFromArray(insertx);
     let yItem = randomValueFromArray(insertx);
     let zItem = randomValueFromArray(insertx);
@@ -52,12 +52,11 @@ function result() {
         let weight = Math.round(300) + ' stone';
         let temperature = Math.round(94) + 'centigrade';
 
+        newStory = newStory.replace('300 pounds', weight);
         newStory = newStory.replace('94 farenheit', temperature);
         
         // Q2. 왜 'centigrade'로 안 바뀌는거일까요?
         // Q3. 수치값을 다르게 보여주려면 어떻게 해야하나요?
-
-        newStory = newStory.replace('300 pounds', weight);
     }
     story.textContent = newStory;
     story.style.visibility = 'visible';
