@@ -11,8 +11,8 @@ function randomValueFromArray(array) {
 }
 
 let start = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.'
-let insertX = ('Willy the Goblin , Big Daddy, Father Christmas');
-let insertY = ('the soup kitchen , Disneyland , the White House');
+let insertx = ('Willy the Goblin , Big Daddy, Father Christmas');
+let inserty = ('the soup kitchen , Disneyland , the White House');
 let insertZ = ('spontaneously combusted, melted into a puddle on the sidewalk, turned into a slug and crawled away');
 
 randomize.addEventListener('click', result);
@@ -20,13 +20,14 @@ randomize.addEventListener('click', result);
 function result() {
 
     let newStory = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
-    let xItem = randomValueFromArray(insertX);
-    let yItem = randomValueFromArray(insertY);
-    let zItem = randomValueFromArray(insertZ);
+    let xItem = randomValueFromArray(insertx);
+    let yItem = randomValueFromArray(insertx);
+    let zItem = randomValueFromArray(insertx);
 
     newStory = newStory.replace(':insertx:',xItem);
-    newStory = newStory.replace(':insertY:',yItem);
-    newStory = newStory.replace(':insertZ:',zItem);
+    newStory = newStory.replace(':inserty:',yItem);
+    newStory = newStory.replace(':insertz:',zItem);
+    newStory = newStory.replace(':insertx:',xItem);
 
 
     if (customName.value !== '') {
@@ -37,7 +38,7 @@ function result() {
     }
 
     if (document.getElementById("uk").checked) {
-        let weight = Math.round(300) + 'stone';
+        let weight = Math.round(300) + ' stone';
         let temperature = Math.round(94) + 'centigrade';
 
         newStory = newStory.replace('94 farenheit', temperature);
